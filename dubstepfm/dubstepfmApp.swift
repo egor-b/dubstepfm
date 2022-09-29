@@ -11,7 +11,7 @@ import SwiftUI
 struct dubstepfmApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }

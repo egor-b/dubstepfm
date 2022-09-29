@@ -14,6 +14,8 @@
 		F132E85328E34177001E98D7 /* dubstepfmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F132E85228E34177001E98D7 /* dubstepfmTests.swift */; };
 		F132E85D28E34177001E98D7 /* dubstepfmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F132E85C28E34177001E98D7 /* dubstepfmUITests.swift */; };
 		F132E85F28E34177001E98D7 /* dubstepfmUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F132E85E28E34177001E98D7 /* dubstepfmUITestsLaunchTests.swift */; };
+		F132E86C28E341DB001E98D7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F132E86B28E341DB001E98D7 /* MainView.swift */; };
+		F132E86F28E34283001E98D7 /* PodcastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F132E86E28E34283001E98D7 /* PodcastView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		F132E85828E34177001E98D7 /* dubstepfmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dubstepfmUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F132E85C28E34177001E98D7 /* dubstepfmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dubstepfmUITests.swift; sourceTree = "<group>"; };
 		F132E85E28E34177001E98D7 /* dubstepfmUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dubstepfmUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F132E86B28E341DB001E98D7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		F132E86E28E34283001E98D7 /* PodcastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				F132E84128E34176001E98D7 /* dubstepfmApp.swift */,
-				F132E84328E34176001E98D7 /* ContentView.swift */,
+				F132E86D28E341E4001E98D7 /* Views */,
 				F132E84528E34177001E98D7 /* Assets.xcassets */,
 				F132E84728E34177001E98D7 /* Preview Content */,
 			);
@@ -125,6 +129,16 @@
 				F132E85E28E34177001E98D7 /* dubstepfmUITestsLaunchTests.swift */,
 			);
 			path = dubstepfmUITests;
+			sourceTree = "<group>";
+		};
+		F132E86D28E341E4001E98D7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F132E84328E34176001E98D7 /* ContentView.swift */,
+				F132E86B28E341DB001E98D7 /* MainView.swift */,
+				F132E86E28E34283001E98D7 /* PodcastView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +272,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F132E84428E34176001E98D7 /* ContentView.swift in Sources */,
+				F132E86F28E34283001E98D7 /* PodcastView.swift in Sources */,
+				F132E86C28E341DB001E98D7 /* MainView.swift in Sources */,
 				F132E84228E34176001E98D7 /* dubstepfmApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,11 +435,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"dubstepfm/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Dubstep.FM;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -447,11 +465,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"dubstepfm/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Dubstep.FM;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
