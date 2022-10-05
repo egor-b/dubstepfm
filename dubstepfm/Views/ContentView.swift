@@ -12,6 +12,7 @@ struct ContentView: View {
     @StateObject private var stream = AudioStream()
     
     @State private var value: Double = 0.0
+    private var link = "http://stream.dubstep.fm/256aac"
     
     var body: some View {
         ZStack {
@@ -58,10 +59,11 @@ struct ContentView: View {
                     
                     Spacer()
                     Button() {
-                        stream.playSound(sound: "https://archive.dubstep.fm/ARCHIVE_-_2019-03-09_-_JVIZ_Presents_Earthquake_Weather_In_Los_Angeles.mp3")//"http://stream.dubstep.fm/256aac")
+                        stream.playSound(sound: link)
                         if stream.isPlaying {
                             stream.pause()
                         } else {
+                            
                             stream.play()
                         }
                         
