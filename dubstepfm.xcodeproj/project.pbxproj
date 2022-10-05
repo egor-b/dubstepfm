@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43FB286211276F690F45C228 /* Pods_dubstepfm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B48B1EB52B836AC4630F2E34 /* Pods_dubstepfm.framework */; };
+		79DFAE81B9AE16659EB83F12 /* Pods_dubstepfmTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9987876AA75AC7E99DBCD140 /* Pods_dubstepfmTests.framework */; };
+		8585110EBF9F0810CA255430 /* Pods_dubstepfm_dubstepfmUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 773E2511F3B68FBDDD1291C4 /* Pods_dubstepfm_dubstepfmUITests.framework */; };
+		F11D896828E72459004124D8 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11D896728E72459004124D8 /* Podcast.swift */; };
+		F11D896B28E72CA0004124D8 /* PodcastDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11D896A28E72CA0004124D8 /* PodcastDataManager.swift */; };
 		F132E84228E34176001E98D7 /* dubstepfmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F132E84128E34176001E98D7 /* dubstepfmApp.swift */; };
 		F132E84428E34176001E98D7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F132E84328E34176001E98D7 /* ContentView.swift */; };
 		F132E84628E34177001E98D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F132E84528E34177001E98D7 /* Assets.xcassets */; };
@@ -16,6 +21,8 @@
 		F132E85F28E34177001E98D7 /* dubstepfmUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F132E85E28E34177001E98D7 /* dubstepfmUITestsLaunchTests.swift */; };
 		F132E86C28E341DB001E98D7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F132E86B28E341DB001E98D7 /* MainView.swift */; };
 		F132E86F28E34283001E98D7 /* PodcastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F132E86E28E34283001E98D7 /* PodcastView.swift */; };
+		F14D794C28E73A49007178BC /* PodcastXmlParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14D794B28E73A49007178BC /* PodcastXmlParser.swift */; };
+		F14D795128EBCE55007178BC /* AudioStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14D795028EBCE55007178BC /* AudioStream.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +43,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14677B00A7A15FCE99871677 /* Pods-dubstepfmTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dubstepfmTests.debug.xcconfig"; path = "Target Support Files/Pods-dubstepfmTests/Pods-dubstepfmTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1BB886D2108600E62A4D68D2 /* Pods-dubstepfm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dubstepfm.release.xcconfig"; path = "Target Support Files/Pods-dubstepfm/Pods-dubstepfm.release.xcconfig"; sourceTree = "<group>"; };
+		4E91A6CBEC6522465E9A6F20 /* Pods-dubstepfm-dubstepfmUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dubstepfm-dubstepfmUITests.debug.xcconfig"; path = "Target Support Files/Pods-dubstepfm-dubstepfmUITests/Pods-dubstepfm-dubstepfmUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		55D5C9EB8FAD6B6DFA54A318 /* Pods-dubstepfm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dubstepfm.debug.xcconfig"; path = "Target Support Files/Pods-dubstepfm/Pods-dubstepfm.debug.xcconfig"; sourceTree = "<group>"; };
+		773E2511F3B68FBDDD1291C4 /* Pods_dubstepfm_dubstepfmUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dubstepfm_dubstepfmUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9987876AA75AC7E99DBCD140 /* Pods_dubstepfmTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dubstepfmTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B48B1EB52B836AC4630F2E34 /* Pods_dubstepfm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dubstepfm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C903C490D9B4848AA484A31D /* Pods-dubstepfmTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dubstepfmTests.release.xcconfig"; path = "Target Support Files/Pods-dubstepfmTests/Pods-dubstepfmTests.release.xcconfig"; sourceTree = "<group>"; };
+		E725E58C5E42FECF20996801 /* Pods-dubstepfm-dubstepfmUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dubstepfm-dubstepfmUITests.release.xcconfig"; path = "Target Support Files/Pods-dubstepfm-dubstepfmUITests/Pods-dubstepfm-dubstepfmUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F11D896728E72459004124D8 /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
+		F11D896A28E72CA0004124D8 /* PodcastDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastDataManager.swift; sourceTree = "<group>"; };
 		F132E83E28E34176001E98D7 /* dubstepfm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dubstepfm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F132E84128E34176001E98D7 /* dubstepfmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dubstepfmApp.swift; sourceTree = "<group>"; };
 		F132E84328E34176001E98D7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +66,9 @@
 		F132E85E28E34177001E98D7 /* dubstepfmUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dubstepfmUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F132E86B28E341DB001E98D7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F132E86E28E34283001E98D7 /* PodcastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastView.swift; sourceTree = "<group>"; };
+		F14D794B28E73A49007178BC /* PodcastXmlParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastXmlParser.swift; sourceTree = "<group>"; };
+		F14D795028EBCE55007178BC /* AudioStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioStream.swift; sourceTree = "<group>"; };
+		F14D795228EC5D7D007178BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43FB286211276F690F45C228 /* Pods_dubstepfm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79DFAE81B9AE16659EB83F12 /* Pods_dubstepfmTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,12 +92,53 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8585110EBF9F0810CA255430 /* Pods_dubstepfm_dubstepfmUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1715589D013D603857F93E48 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				55D5C9EB8FAD6B6DFA54A318 /* Pods-dubstepfm.debug.xcconfig */,
+				1BB886D2108600E62A4D68D2 /* Pods-dubstepfm.release.xcconfig */,
+				4E91A6CBEC6522465E9A6F20 /* Pods-dubstepfm-dubstepfmUITests.debug.xcconfig */,
+				E725E58C5E42FECF20996801 /* Pods-dubstepfm-dubstepfmUITests.release.xcconfig */,
+				14677B00A7A15FCE99871677 /* Pods-dubstepfmTests.debug.xcconfig */,
+				C903C490D9B4848AA484A31D /* Pods-dubstepfmTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		36CCEE1E170174EDCE8A5737 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B48B1EB52B836AC4630F2E34 /* Pods_dubstepfm.framework */,
+				773E2511F3B68FBDDD1291C4 /* Pods_dubstepfm_dubstepfmUITests.framework */,
+				9987876AA75AC7E99DBCD140 /* Pods_dubstepfmTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F11D896628E72437004124D8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F11D896728E72459004124D8 /* Podcast.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F11D896928E72B76004124D8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F11D896A28E72CA0004124D8 /* PodcastDataManager.swift */,
+				F14D795028EBCE55007178BC /* AudioStream.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		F132E83528E34176001E98D7 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +146,8 @@
 				F132E85128E34177001E98D7 /* dubstepfmTests */,
 				F132E85B28E34177001E98D7 /* dubstepfmUITests */,
 				F132E83F28E34176001E98D7 /* Products */,
+				1715589D013D603857F93E48 /* Pods */,
+				36CCEE1E170174EDCE8A5737 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,8 +164,12 @@
 		F132E84028E34176001E98D7 /* dubstepfm */ = {
 			isa = PBXGroup;
 			children = (
+				F14D795228EC5D7D007178BC /* Info.plist */,
 				F132E84128E34176001E98D7 /* dubstepfmApp.swift */,
 				F132E86D28E341E4001E98D7 /* Views */,
+				F11D896628E72437004124D8 /* Model */,
+				F11D896928E72B76004124D8 /* Network */,
+				F14D794A28E73A28007178BC /* Utilities */,
 				F132E84528E34177001E98D7 /* Assets.xcassets */,
 				F132E84728E34177001E98D7 /* Preview Content */,
 			);
@@ -141,6 +211,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		F14D794A28E73A28007178BC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F14D794B28E73A49007178BC /* PodcastXmlParser.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -148,9 +226,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F132E86228E34177001E98D7 /* Build configuration list for PBXNativeTarget "dubstepfm" */;
 			buildPhases = (
+				2FF67AF1D7F85AFF05884703 /* [CP] Check Pods Manifest.lock */,
 				F132E83A28E34176001E98D7 /* Sources */,
 				F132E83B28E34176001E98D7 /* Frameworks */,
 				F132E83C28E34176001E98D7 /* Resources */,
+				65D1E505F3D3940B429A5C9F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -165,6 +245,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F132E86528E34177001E98D7 /* Build configuration list for PBXNativeTarget "dubstepfmTests" */;
 			buildPhases = (
+				39587B1ED1F136DC63FCCF45 /* [CP] Check Pods Manifest.lock */,
 				F132E84A28E34177001E98D7 /* Sources */,
 				F132E84B28E34177001E98D7 /* Frameworks */,
 				F132E84C28E34177001E98D7 /* Resources */,
@@ -183,9 +264,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F132E86828E34177001E98D7 /* Build configuration list for PBXNativeTarget "dubstepfmUITests" */;
 			buildPhases = (
+				B00E319A9B941F32F7761218 /* [CP] Check Pods Manifest.lock */,
 				F132E85428E34177001E98D7 /* Sources */,
 				F132E85528E34177001E98D7 /* Frameworks */,
 				F132E85628E34177001E98D7 /* Resources */,
+				1236C2591B877909DA83100B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -266,15 +349,122 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1236C2591B877909DA83100B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dubstepfm-dubstepfmUITests/Pods-dubstepfm-dubstepfmUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dubstepfm-dubstepfmUITests/Pods-dubstepfm-dubstepfmUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dubstepfm-dubstepfmUITests/Pods-dubstepfm-dubstepfmUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2FF67AF1D7F85AFF05884703 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-dubstepfm-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		39587B1ED1F136DC63FCCF45 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-dubstepfmTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		65D1E505F3D3940B429A5C9F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dubstepfm/Pods-dubstepfm-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dubstepfm/Pods-dubstepfm-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dubstepfm/Pods-dubstepfm-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B00E319A9B941F32F7761218 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-dubstepfm-dubstepfmUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F132E83A28E34176001E98D7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F14D794C28E73A49007178BC /* PodcastXmlParser.swift in Sources */,
+				F14D795128EBCE55007178BC /* AudioStream.swift in Sources */,
+				F11D896B28E72CA0004124D8 /* PodcastDataManager.swift in Sources */,
 				F132E84428E34176001E98D7 /* ContentView.swift in Sources */,
 				F132E86F28E34283001E98D7 /* PodcastView.swift in Sources */,
 				F132E86C28E341DB001E98D7 /* MainView.swift in Sources */,
 				F132E84228E34176001E98D7 /* dubstepfmApp.swift in Sources */,
+				F11D896828E72459004124D8 /* Podcast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +617,7 @@
 		};
 		F132E86328E34177001E98D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55D5C9EB8FAD6B6DFA54A318 /* Pods-dubstepfm.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -435,13 +626,14 @@
 				DEVELOPMENT_ASSET_PATHS = "\"dubstepfm/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = dubstepfm/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Dubstep.FM;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,21 +649,24 @@
 		};
 		F132E86428E34177001E98D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BB886D2108600E62A4D68D2 /* Pods-dubstepfm.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"dubstepfm/Preview Content\"";
+				DEVELOPMENT_TEAM = 4NW94WU93C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = dubstepfm/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Dubstep.FM;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -487,6 +682,7 @@
 		};
 		F132E86628E34177001E98D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14677B00A7A15FCE99871677 /* Pods-dubstepfmTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -506,6 +702,7 @@
 		};
 		F132E86728E34177001E98D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C903C490D9B4848AA484A31D /* Pods-dubstepfmTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -525,6 +722,7 @@
 		};
 		F132E86928E34177001E98D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E91A6CBEC6522465E9A6F20 /* Pods-dubstepfm-dubstepfmUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -542,6 +740,7 @@
 		};
 		F132E86A28E34177001E98D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E725E58C5E42FECF20996801 /* Pods-dubstepfm-dubstepfmUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -19,10 +19,9 @@ struct MainView: View {
                 .tabItem {
                     Label("Podcasts", systemImage: "list.dash.header.rectangle")
                 }
-                .accentColor(.yellow)
             
         }
-        .accentColor(.white)
+        .accentColor(.black)
         .onAppear {
             let appearance = UITabBarAppearance()
             appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
