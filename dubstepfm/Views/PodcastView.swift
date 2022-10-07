@@ -12,19 +12,23 @@ struct PodcastView: View {
     @StateObject private var podcastDM = PodcastDataManager()
     
     var body: some View {
-        List {
-            ForEach(podcastDM.podcast, id: \.self) { podcast in
-                Text("\(podcast.description) - \(podcast.pubDate)")
-            }
-        }.task {
-            await podcastDM.fetchPodcasts()
-        }.refreshable {
-            await podcastDM.fetchPodcasts()
-        }.overlay {
-            if podcastDM.isLoading {
-                ProgressView()
-            }
+        
+        NavigationView {
+            List {
+                ForEach(podcastDM.podcast, id: \.self) { podcast in
+                    PodcatsCell(podcast: podcast)
+                }
+            }.task {
+                await podcastDM.fetchPodcasts()
+            }.refreshable {
+                await podcastDM.fetchPodcasts()
+            }.overlay {
+                if podcastDM.isLoading {
+                    ProgressView()
+                }
+            }.navigationTitle("Podcast")
         }
+        
     }
 }
 

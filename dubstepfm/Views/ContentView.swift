@@ -18,11 +18,14 @@ struct ContentView: View {
             VStack(spacing: 5) {
                 Image("dsfm_cover")
                     .resizable()
+                    .shadow(radius: 20)
+                    .cornerRadius(5)
                     .aspectRatio(contentMode: .fit)
                     .padding(50)
                 Text("title")
                     .colorInvert()
                 Spacer()
+                
                 HStack {
                     Text(stream.title)
                         .bold()
@@ -33,9 +36,9 @@ struct ContentView: View {
                         .padding(.horizontal)
                     Spacer()
                 }
+                
                 HStack {
                     Text(stream.subTitle)
-                    //                        .bold()
                         .font(.system(size: 12))
                         .fixedSize(horizontal: false, vertical: true)
                         .lineLimit(1)
@@ -44,7 +47,6 @@ struct ContentView: View {
                     
                     Spacer()
                 }
-                
                 
                 VStack {
                     Slider(value: $stream.currentTime, in: 0...stream.viewDuration) { v in
@@ -105,6 +107,7 @@ struct ContentView: View {
                     Spacer()
                 }
                 Spacer()
+                
                 HStack(spacing: 50) {
                     
                     Button() {} label: {

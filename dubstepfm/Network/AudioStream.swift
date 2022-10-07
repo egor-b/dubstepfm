@@ -23,14 +23,13 @@ class AudioStream: ObservableObject {
     private var audioPlayer: AVPlayer?
     private var playerItem: AVPlayerItem?
     
-    private var isTimerRunning = false
-    private var timer = Timer()
+    private var timeObserverToken: Any?
     
     func playSound(sound: String) {
+        
         if let url = URL(string: sound) {
             self.playerItem = AVPlayerItem(url: url)
             self.audioPlayer = AVPlayer(playerItem: self.playerItem)
-            self.audioPlayer?.allowsExternalPlayback = true
             let duration = playerItem?.asset.duration ?? CMTime(seconds: 1, preferredTimescale: 1)
             viewDuration = duration.seconds
             currentTime = playerItem?.currentTime().seconds ?? 0.0
@@ -39,7 +38,9 @@ class AudioStream: ObservableObject {
             }
             endTime = convertSecondsToTime(second: Int(viewDuration))
         }
+        
         backgroundMode()
+        setupRemoteTransportControls()
         
         if sound.contains(".mp3") {
             extractMetadata()
@@ -49,6 +50,7 @@ class AudioStream: ObservableObject {
             subTitle = "Live"
             isLive = true
         }
+        
     }
     
     func changeQuality(sound: String) {
@@ -61,37 +63,37 @@ class AudioStream: ObservableObject {
     func play() {
         isPlaying = true
         audioPlayer?.play()
-        runTimer()
-//        setupNowPlaying()
-//        setupRemoteTransportControls()
+        addPeriodicTimeObserver()
     }
     
     func pause() {
         isPlaying = false
         audioPlayer?.pause()
-        timer.invalidate()
+        removePeriodicTimeObserver()
     }
     
-    private func runTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
-    }
-    
-    @objc func updateTimer() {
-        currentTime = playerItem?.currentTime().seconds ?? 0.0
-        if currentTime > viewDuration - 0.5 && !isLive {
-            pause()
-            currentTime = 0.0
-            playerSeek(time: 0.0)
-        }
-        time = convertSecondsToTime(second: Int(currentTime))
+    func addPeriodicTimeObserver() {
+        let timeScale = CMTimeScale(NSEC_PER_SEC)
+        let time = CMTime(seconds: 0.5, preferredTimescale: timeScale)
         
+        timeObserverToken = audioPlayer?.addPeriodicTimeObserver(forInterval: time, queue: .main) {
+            [weak self] time in
+            self!.currentTime = time.seconds//playerItem?.currentTime().seconds ?? 0.0
+            if self!.currentTime > self!.viewDuration - 0.5 && !self!.isLive {
+                self!.pause()
+                self!.currentTime = 0.0
+                self!.playerSeek(time: 0.0)
+            }
+            self!.time = self!.convertSecondsToTime(second: Int(self!.currentTime))
+            self!.setupNowPlaying()
+        }
     }
     
-    private func convertSecondsToTime(second: Int) -> String {
-        let seconds = second % 60
-        let minutes = (second / 60) % 60
-        let hours = (second / 3600)
-        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+    func removePeriodicTimeObserver() {
+        if let timeObserverToken = timeObserverToken {
+            audioPlayer?.removeTimeObserver(timeObserverToken)
+            self.timeObserverToken = nil
+        }
     }
     
     func playerSeek (time: Double) {
@@ -102,56 +104,96 @@ class AudioStream: ObservableObject {
         let to = CMTimeMake(value: Int64(time), timescale: 1)
         audioPlayer?.seek(to: to)
     }
+    
     private func backgroundMode() {
         do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers, .allowAirPlay])
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.allowAirPlay, .allowBluetoothA2DP, .allowBluetooth])
             try AVAudioSession.sharedInstance().setActive(true)
         } catch {
             print(error)
         }
     }
     
-//    func setupRemoteTransportControls() {
-//        // Get the shared MPRemoteCommandCenter
-//        let commandCenter = MPRemoteCommandCenter.shared()
-//
-//        // Add handler for Play Command
-//        commandCenter.playCommand.addTarget { [unowned self] event in
-//            if self.audioPlayer?.rate == 0.0 {
-//                self.audioPlayer?.play()
-//                return .success
-//            }
-//            return .commandFailed
-//        }
-//
-//        // Add handler for Pause Command
-//        commandCenter.pauseCommand.addTarget { [unowned self] event in
-//            if self.audioPlayer?.rate == 1.0 {
-//                self.audioPlayer?.pause()
-//                return .success
-//            }
-//            return .commandFailed
-//        }
-//    }
-//
-//    func setupNowPlaying() {
-//        // Define Now Playing Info
-//        var nowPlayingInfo = [String : Any]()
-//        nowPlayingInfo[MPMediaItemPropertyTitle] = "My Movie"
-//
-//        if let image = UIImage(named: "lockscreen") {
-//            nowPlayingInfo[MPMediaItemPropertyArtwork] =
-//            MPMediaItemArtwork(boundsSize: image.size) { size in
-//                return image
-//            }
-//        }
-//        nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = playerItem?.currentTime().seconds
-//        nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = playerItem?.asset.duration.seconds
-//        nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = audioPlayer?.rate
-//
-//        // Set the metadata
-//        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
-//    }
+    private func convertSecondsToTime(second: Int) -> String {
+        let seconds = second % 60
+        let minutes = (second / 60) % 60
+        let hours = (second / 3600)
+        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+    }
+    
+    private func setupRemoteTransportControls() {
+        let commandCenter = MPRemoteCommandCenter.shared()
+        
+        commandCenter.playCommand.addTarget { [unowned self] event in
+            if self.audioPlayer!.rate == 0.0 {
+                self.audioPlayer!.play()
+                return .success
+            }
+            return .commandFailed
+        }
+        
+        commandCenter.pauseCommand.addTarget { [unowned self] event in
+            if self.audioPlayer!.rate == 1.0 {
+                self.audioPlayer!.pause()
+                return .success
+            }
+            return .commandFailed
+        }
+        
+        if isLive {
+            commandCenter.changePlaybackPositionCommand.addTarget { event in
+                if let event = event as? MPChangePlaybackPositionCommandEvent {
+                    self.audioPlayer?.seek(to: CMTime(seconds: event.positionTime, preferredTimescale: CMTimeScale(1000)), completionHandler: { [weak self](success) in
+                        guard let self = self else {return}
+                        if success {
+                            self.audioPlayer?.rate = 1.0
+                        }
+                    })
+                    return .success
+                }
+                return .commandFailed
+            }
+            
+            commandCenter.skipForwardCommand.preferredIntervals = [15]
+            commandCenter.skipForwardCommand.addTarget { event in
+                if !self.isLive {
+                    self.playerSeek(time: self.currentTime + 15)
+                    return .success
+                }
+                return .commandFailed
+            }
+            
+            commandCenter.skipBackwardCommand.preferredIntervals = [15]
+            commandCenter.skipBackwardCommand.addTarget { event in
+                if !self.isLive {
+                    self.playerSeek(time: self.currentTime - 15)
+                    return .success
+                }
+                return .commandFailed
+            }
+        }
+        
+    }
+    
+    private func setupNowPlaying() {
+        var nowPlayingInfo = [String : Any]()
+        nowPlayingInfo[MPMediaItemPropertyTitle] = title
+        nowPlayingInfo[MPMediaItemPropertyArtist] = subTitle
+        
+        if let image = UIImage(named: "dsfm_cover") {
+            nowPlayingInfo[MPMediaItemPropertyArtwork] =
+            MPMediaItemArtwork(boundsSize: image.size) { size in
+                return image
+            }
+        }
+        
+        nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = playerItem?.currentTime().seconds
+        nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = playerItem?.asset.duration.seconds
+        nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = audioPlayer?.rate
+        nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackProgress] = playerItem?.currentTime().seconds
+        
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
+    }
     
     private func extractMetadata() {
         let metadataList = playerItem?.asset.metadata
@@ -164,13 +206,14 @@ class AudioStream: ObservableObject {
                         self.title = "Dubstep.FM"
                     }
                 }
+                
                 if item.commonKey == .commonKeyAlbumName {
                     if let podcastAlbum = stringValue as? String {
                         self.subTitle += " - "
                         self.subTitle += podcastAlbum
                     }
                 }
-
+                
                 if item.commonKey  == .commonKeyArtist {
                     if let podcastArtist = stringValue as? String {
                         self.subTitle = podcastArtist

@@ -13,7 +13,7 @@ class PodcastDataManager: ObservableObject {
     
     @Published private(set) var podcast = [Podcast]()
     @Published private(set) var isLoading = false
-        
+    
     func fetchPodcasts() async {
         isLoading = true
         AF.request("https://www.dubstep.fm/archive.xml", method: .get).validate().responseString { resp in

@@ -24,6 +24,7 @@
 		F14D794C28E73A49007178BC /* PodcastXmlParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14D794B28E73A49007178BC /* PodcastXmlParser.swift */; };
 		F14D795128EBCE55007178BC /* AudioStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14D795028EBCE55007178BC /* AudioStream.swift */; };
 		F1DDB74E28EFB733003BB308 /* ViewDidLoadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DDB74D28EFB733003BB308 /* ViewDidLoadModifier.swift */; };
+		F1DDB75428F0B94B003BB308 /* PodcatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DDB75328F0B94B003BB308 /* PodcatsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		F14D795028EBCE55007178BC /* AudioStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioStream.swift; sourceTree = "<group>"; };
 		F14D795228EC5D7D007178BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F1DDB74D28EFB733003BB308 /* ViewDidLoadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadModifier.swift; sourceTree = "<group>"; };
+		F1DDB75328F0B94B003BB308 /* PodcatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcatsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 		F132E86D28E341E4001E98D7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F1DDB75228F0B938003BB308 /* Cell */,
 				F1DDB74F28EFB741003BB308 /* Modifier */,
 				F132E84328E34176001E98D7 /* ContentView.swift */,
 				F132E86B28E341DB001E98D7 /* MainView.swift */,
@@ -228,6 +231,14 @@
 				F1DDB74D28EFB733003BB308 /* ViewDidLoadModifier.swift */,
 			);
 			path = Modifier;
+			sourceTree = "<group>";
+		};
+		F1DDB75228F0B938003BB308 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F1DDB75328F0B94B003BB308 /* PodcatsCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -470,6 +481,7 @@
 			files = (
 				F14D794C28E73A49007178BC /* PodcastXmlParser.swift in Sources */,
 				F14D795128EBCE55007178BC /* AudioStream.swift in Sources */,
+				F1DDB75428F0B94B003BB308 /* PodcatsCell.swift in Sources */,
 				F11D896B28E72CA0004124D8 /* PodcastDataManager.swift in Sources */,
 				F132E84428E34176001E98D7 /* ContentView.swift in Sources */,
 				F132E86F28E34283001E98D7 /* PodcastView.swift in Sources */,
