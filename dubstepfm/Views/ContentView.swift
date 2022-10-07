@@ -18,10 +18,10 @@ struct ContentView: View {
             VStack(spacing: 5) {
                 Image("dsfm_cover")
                     .resizable()
-                    .shadow(radius: 20)
-                    .cornerRadius(5)
+                    .cornerRadius(10)
                     .aspectRatio(contentMode: .fit)
                     .padding(50)
+                    .shadow(color: .black, radius: 10)
                 Text("title")
                     .colorInvert()
                 Spacer()
@@ -32,7 +32,8 @@ struct ContentView: View {
                         .font(.system(size: 15))
                         .fixedSize(horizontal: false, vertical: true)
                         .lineLimit(1)
-                        .multilineTextAlignment(.leading)
+                        .multilineTextAlignment(.center)
+                        .frame(maxWidth: .infinity, alignment: .center)
                         .padding(.horizontal)
                     Spacer()
                 }
@@ -42,7 +43,8 @@ struct ContentView: View {
                         .font(.system(size: 12))
                         .fixedSize(horizontal: false, vertical: true)
                         .lineLimit(1)
-                        .multilineTextAlignment(.leading)
+                        .multilineTextAlignment(.center)
+                        .frame(maxWidth: .infinity, alignment: .center)
                         .padding(.horizontal)
                     
                     Spacer()
@@ -137,7 +139,7 @@ struct ContentView: View {
                 Spacer()
             }
         }.onViewDidLoad {
-            stream.playSound(sound: "https://archive.dubstep.fm/ARCHIVE_-_2019-03-09_-_JVIZ_Presents_Earthquake_Weather_In_Los_Angeles.mp3")
+            stream.playSound(sound: "http://stream.dubstep.fm/256aac")
         }
     }
 }
