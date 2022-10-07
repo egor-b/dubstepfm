@@ -12,7 +12,6 @@ struct ContentView: View {
     @StateObject private var stream = AudioStream()
     
     @State private var value: Double = 0.0
-    private var link = "http://stream.dubstep.fm/256aac"
     
     var body: some View {
         ZStack {
@@ -27,43 +26,57 @@ struct ContentView: View {
                 HStack {
                     Text(stream.title)
                         .bold()
-                        .font(.system(size: 18))
+                        .font(.system(size: 15))
                         .fixedSize(horizontal: false, vertical: true)
-                        .lineLimit(2)
+                        .lineLimit(1)
                         .multilineTextAlignment(.leading)
                         .padding(.horizontal)
+                    Spacer()
+                }
+                HStack {
+                    Text(stream.subTitle)
+                    //                        .bold()
+                        .font(.system(size: 12))
+                        .fixedSize(horizontal: false, vertical: true)
+                        .lineLimit(1)
+                        .multilineTextAlignment(.leading)
+                        .padding(.horizontal)
+                    
                     Spacer()
                 }
                 
                 
                 VStack {
-                    Slider(value: $value, in: 0...60)
-                        .accentColor(.gray)
+                    Slider(value: $stream.currentTime, in: 0...stream.viewDuration) { v in
+                        stream.playerSeek(time: stream.currentTime)
+                    }
+                    .accentColor(.gray)
                     HStack {
-                        Text("0:00")
+                        Text(stream.time)
+                            .font(.system(size: 10))
                         Spacer()
-                        Text("0:00")
+                        Text(stream.endTime)
+                            .font(.system(size: 10))
                     }
                 }.padding(20)
                 
                 HStack {
                     Spacer()
                     Button() {
-                        print("q")
+                        stream.playerSeek(time: stream.currentTime - 15)
                     } label: {
                         Image(systemName: "gobackward.15")
                             .font(.system(size: 30))
                             .foregroundColor(.black)
                     }
                     .padding()
+                    .disabled(stream.isLive)
                     
                     Spacer()
                     Button() {
-                        stream.playSound(sound: link)
                         if stream.isPlaying {
                             stream.pause()
                         } else {
-                            
                             stream.play()
                         }
                         
@@ -81,23 +94,38 @@ struct ContentView: View {
                     
                     Spacer()
                     Button() {
-                        print("e")
+                        stream.playerSeek(time: stream.currentTime + 15)
                     } label: {
                         Image(systemName: "goforward.15")
                             .font(.system(size: 30))
                             .foregroundColor(.black)
                     }
                     .padding()
+                    .disabled(stream.isLive)
                     Spacer()
                 }
                 Spacer()
                 HStack(spacing: 50) {
+                    
                     Button() {} label: {
                         Image(systemName: "airplayaudio")
                             .font(.system(size: 20))
                             .foregroundColor(.black)
                     }
-                    Button () {} label: {
+                    Menu() {
+                        Button("AAC 256Kbps (Best)") {
+                            stream.changeQuality(sound: "http://stream.dubstep.fm/256aac")
+                        }
+                        Button("AAC 128Kbps (Heigh)") {
+                            stream.changeQuality(sound: "http://stream.dubstep.fm/128aac")
+                        }
+                        Button("AAC 64Kbps (Medium)") {
+                            stream.changeQuality(sound: "http://stream.dubstep.fm/64aac")
+                        }
+                        Button("AAC 24Kbps (Low)") {
+                            stream.changeQuality(sound: "http://stream.dubstep.fm/24aac")
+                        }
+                    } label: {
                         Image(systemName: "list.bullet.circle.fill")
                             .font(.system(size: 20))
                             .foregroundColor(.black)
@@ -105,10 +133,9 @@ struct ContentView: View {
                 }
                 Spacer()
             }
+        }.onViewDidLoad {
+            stream.playSound(sound: "https://archive.dubstep.fm/ARCHIVE_-_2019-03-09_-_JVIZ_Presents_Earthquake_Weather_In_Los_Angeles.mp3")
         }
-        
-//        .background(Color.black)
-//        .ignoresSafeArea()
     }
 }
 

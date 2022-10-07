@@ -23,7 +23,7 @@ class PodcastDataManager: ObservableObject {
                 parsePodcast.parseFeed(data: Data(suceess.utf8))
                 self.podcast = parsePodcast.podcasts
             case .failure(let error):
-                print("FAIL")
+                print(error.localizedDescription)
             }
             self.isLoading = false
         }

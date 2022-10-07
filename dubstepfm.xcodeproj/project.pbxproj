@@ -23,6 +23,7 @@
 		F132E86F28E34283001E98D7 /* PodcastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F132E86E28E34283001E98D7 /* PodcastView.swift */; };
 		F14D794C28E73A49007178BC /* PodcastXmlParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14D794B28E73A49007178BC /* PodcastXmlParser.swift */; };
 		F14D795128EBCE55007178BC /* AudioStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14D795028EBCE55007178BC /* AudioStream.swift */; };
+		F1DDB74E28EFB733003BB308 /* ViewDidLoadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DDB74D28EFB733003BB308 /* ViewDidLoadModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		F14D794B28E73A49007178BC /* PodcastXmlParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastXmlParser.swift; sourceTree = "<group>"; };
 		F14D795028EBCE55007178BC /* AudioStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioStream.swift; sourceTree = "<group>"; };
 		F14D795228EC5D7D007178BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F1DDB74D28EFB733003BB308 /* ViewDidLoadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 		F132E86D28E341E4001E98D7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F1DDB74F28EFB741003BB308 /* Modifier */,
 				F132E84328E34176001E98D7 /* ContentView.swift */,
 				F132E86B28E341DB001E98D7 /* MainView.swift */,
 				F132E86E28E34283001E98D7 /* PodcastView.swift */,
@@ -217,6 +220,14 @@
 				F14D794B28E73A49007178BC /* PodcastXmlParser.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F1DDB74F28EFB741003BB308 /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				F1DDB74D28EFB733003BB308 /* ViewDidLoadModifier.swift */,
+			);
+			path = Modifier;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -463,6 +474,7 @@
 				F132E84428E34176001E98D7 /* ContentView.swift in Sources */,
 				F132E86F28E34283001E98D7 /* PodcastView.swift in Sources */,
 				F132E86C28E341DB001E98D7 /* MainView.swift in Sources */,
+				F1DDB74E28EFB733003BB308 /* ViewDidLoadModifier.swift in Sources */,
 				F132E84228E34176001E98D7 /* dubstepfmApp.swift in Sources */,
 				F11D896828E72459004124D8 /* Podcast.swift in Sources */,
 			);
