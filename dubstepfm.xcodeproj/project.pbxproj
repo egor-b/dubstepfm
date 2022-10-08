@@ -26,6 +26,7 @@
 		F1DDB74E28EFB733003BB308 /* ViewDidLoadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DDB74D28EFB733003BB308 /* ViewDidLoadModifier.swift */; };
 		F1DDB75428F0B94B003BB308 /* PodcatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DDB75328F0B94B003BB308 /* PodcatsCell.swift */; };
 		F1DDB75828F0FD70003BB308 /* AirPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DDB75728F0FD70003BB308 /* AirPlayView.swift */; };
+		F4E309BA28F1055A000C7753 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4E309B928F1055A000C7753 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		F1DDB74D28EFB733003BB308 /* ViewDidLoadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadModifier.swift; sourceTree = "<group>"; };
 		F1DDB75328F0B94B003BB308 /* PodcatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcatsCell.swift; sourceTree = "<group>"; };
 		F1DDB75728F0FD70003BB308 /* AirPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPlayView.swift; sourceTree = "<group>"; };
+		F4E309B928F1055A000C7753 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 				F11D896928E72B76004124D8 /* Network */,
 				F14D794A28E73A28007178BC /* Utilities */,
 				F132E84528E34177001E98D7 /* Assets.xcassets */,
+				F4E309B928F1055A000C7753 /* GoogleService-Info.plist */,
 				F132E84728E34177001E98D7 /* Preview Content */,
 			);
 			path = dubstepfm;
@@ -355,6 +358,7 @@
 			files = (
 				F132E84928E34177001E98D7 /* Preview Assets.xcassets in Resources */,
 				F132E84628E34177001E98D7 /* Assets.xcassets in Resources */,
+				F4E309BA28F1055A000C7753 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

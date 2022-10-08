@@ -22,7 +22,8 @@ struct dubstepfmApp: App {
 class AppDelegate: NSObject, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        UIApplication.shared.beginReceivingRemoteControlEvents()
+        FirebaseApp.configure()
+        
         return true
     }
 }
