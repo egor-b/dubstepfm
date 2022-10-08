@@ -25,6 +25,7 @@
 		F14D795128EBCE55007178BC /* AudioStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14D795028EBCE55007178BC /* AudioStream.swift */; };
 		F1DDB74E28EFB733003BB308 /* ViewDidLoadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DDB74D28EFB733003BB308 /* ViewDidLoadModifier.swift */; };
 		F1DDB75428F0B94B003BB308 /* PodcatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DDB75328F0B94B003BB308 /* PodcatsCell.swift */; };
+		F1DDB75828F0FD70003BB308 /* AirPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DDB75728F0FD70003BB308 /* AirPlayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		F14D795228EC5D7D007178BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F1DDB74D28EFB733003BB308 /* ViewDidLoadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadModifier.swift; sourceTree = "<group>"; };
 		F1DDB75328F0B94B003BB308 /* PodcatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcatsCell.swift; sourceTree = "<group>"; };
+		F1DDB75728F0FD70003BB308 /* AirPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPlayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				F1DDB74D28EFB733003BB308 /* ViewDidLoadModifier.swift */,
+				F1DDB75728F0FD70003BB308 /* AirPlayView.swift */,
 			);
 			path = Modifier;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				F132E84428E34176001E98D7 /* ContentView.swift in Sources */,
 				F132E86F28E34283001E98D7 /* PodcastView.swift in Sources */,
 				F132E86C28E341DB001E98D7 /* MainView.swift in Sources */,
+				F1DDB75828F0FD70003BB308 /* AirPlayView.swift in Sources */,
 				F1DDB74E28EFB733003BB308 /* ViewDidLoadModifier.swift in Sources */,
 				F132E84228E34176001E98D7 /* dubstepfmApp.swift in Sources */,
 				F11D896828E72459004124D8 /* Podcast.swift in Sources */,

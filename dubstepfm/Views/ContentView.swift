@@ -112,11 +112,13 @@ struct ContentView: View {
                 
                 HStack(spacing: 50) {
                     
-                    Button() {} label: {
-                        Image(systemName: "airplayaudio")
-                            .font(.system(size: 20))
-                            .foregroundColor(.black)
-                    }
+                    AirPlayView()
+                        .frame(width: 20, height: 20)
+//                    Button() {} label: {
+//                        Image(systemName: "airplayaudio")
+//                            .font(.system(size: 20))
+//                            .foregroundColor(.black)
+//                    }
                     Menu() {
                         Button("AAC 256Kbps (Best)") {
                             stream.changeQuality(sound: "http://stream.dubstep.fm/256aac")
