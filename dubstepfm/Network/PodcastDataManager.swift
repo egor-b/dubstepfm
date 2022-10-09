@@ -22,6 +22,7 @@ class PodcastDataManager: ObservableObject {
                 let parsePodcast = PodcastXmlParser()
                 parsePodcast.parseFeed(data: Data(suceess.utf8))
                 self.podcast = parsePodcast.podcasts
+                self.podcast = self.podcast.sorted { $0.season > $1.season }
             case .failure(let error):
                 print(error.localizedDescription)
             }

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct MainView: View {
+    
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
+    
     var body: some View {
         TabView {
             ContentView()
@@ -21,20 +24,13 @@ struct MainView: View {
                 }
             
         }
-        .accentColor(.black)
+        .accentColor(colorScheme == .dark ? .white : .black)
         .onAppear {
             let appearance = UITabBarAppearance()
             appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
-            appearance.backgroundColor = UIColor(Color.orange.opacity(0))
-            
-            // Use this appearance when scrolling behind the TabView:
+            appearance.backgroundColor = UIColor(Color.clear)
             UITabBar.appearance().standardAppearance = appearance
-            // Use this appearance when scrolled all the way up:
-            if #available(iOS 15.0, *) {
-                UITabBar.appearance().scrollEdgeAppearance = appearance
-            } else {
-                UITabBar.appearance().backgroundColor = .black
-            }
+            UITabBar.appearance().scrollEdgeAppearance = appearance
         }
     }
 }

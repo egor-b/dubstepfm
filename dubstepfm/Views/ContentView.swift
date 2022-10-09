@@ -11,8 +11,8 @@ struct ContentView: View {
     
     @StateObject private var stream = AudioStream()
     
-    @State private var value: Double = 0.0
-    
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
+
     var body: some View {
         ZStack {
             VStack(spacing: 5) {
@@ -21,9 +21,7 @@ struct ContentView: View {
                     .cornerRadius(10)
                     .aspectRatio(contentMode: .fit)
                     .padding(50)
-                    .shadow(color: .black, radius: 10)
-                Text("title")
-                    .colorInvert()
+                    .shadow(color: colorScheme == .dark ? .gray : .black, radius: 15)
                 Spacer()
                 
                 HStack {
@@ -71,7 +69,6 @@ struct ContentView: View {
                     } label: {
                         Image(systemName: "gobackward.15")
                             .font(.system(size: 30))
-                            .foregroundColor(.black)
                     }
                     .padding()
                     .disabled(stream.isLive)
@@ -86,13 +83,11 @@ struct ContentView: View {
                         
                     } label: {
                         if stream.isPlaying {
-                            Image(systemName: "pause.fill")//"play_button")
+                            Image(systemName: "pause.fill")
                                 .font(.system(size: 50))
-                                .foregroundColor(.black)
                         } else {
-                            Image(systemName: "play.fill")//"play_button")
+                            Image(systemName: "play.fill")
                                 .font(.system(size: 50))
-                                .foregroundColor(.black)
                         }
                     }
                     
@@ -102,7 +97,6 @@ struct ContentView: View {
                     } label: {
                         Image(systemName: "goforward.15")
                             .font(.system(size: 30))
-                            .foregroundColor(.black)
                     }
                     .padding()
                     .disabled(stream.isLive)
@@ -114,11 +108,7 @@ struct ContentView: View {
                     
                     AirPlayView()
                         .frame(width: 20, height: 20)
-//                    Button() {} label: {
-//                        Image(systemName: "airplayaudio")
-//                            .font(.system(size: 20))
-//                            .foregroundColor(.black)
-//                    }
+                        .darkLightForegroundColor()
                     Menu() {
                         Button("AAC 256Kbps (Best)") {
                             stream.changeQuality(sound: "http://stream.dubstep.fm/256aac")
@@ -135,13 +125,12 @@ struct ContentView: View {
                     } label: {
                         Image(systemName: "list.bullet.circle.fill")
                             .font(.system(size: 20))
-                            .foregroundColor(.black)
                     }
                 }
                 Spacer()
             }
         }.onViewDidLoad {
-            stream.playSound(sound: "http://stream.dubstep.fm/256aac")
+            stream.playSound(sound: "https://archive.dubstep.fm/ARCHIVE_-_2019-03-09_-_JVIZ_Presents_Earthquake_Weather_In_Los_Angeles.mp3")
         }
     }
 }

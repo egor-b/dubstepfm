@@ -26,6 +26,7 @@
 		F1DDB74E28EFB733003BB308 /* ViewDidLoadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DDB74D28EFB733003BB308 /* ViewDidLoadModifier.swift */; };
 		F1DDB75428F0B94B003BB308 /* PodcatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DDB75328F0B94B003BB308 /* PodcatsCell.swift */; };
 		F1DDB75828F0FD70003BB308 /* AirPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DDB75728F0FD70003BB308 /* AirPlayView.swift */; };
+		F1DDB75C28F24817003BB308 /* DarkLightMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DDB75B28F24817003BB308 /* DarkLightMode.swift */; };
 		F4E309BA28F1055A000C7753 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4E309B928F1055A000C7753 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,7 @@
 		F1DDB74D28EFB733003BB308 /* ViewDidLoadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadModifier.swift; sourceTree = "<group>"; };
 		F1DDB75328F0B94B003BB308 /* PodcatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcatsCell.swift; sourceTree = "<group>"; };
 		F1DDB75728F0FD70003BB308 /* AirPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPlayView.swift; sourceTree = "<group>"; };
+		F1DDB75B28F24817003BB308 /* DarkLightMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkLightMode.swift; sourceTree = "<group>"; };
 		F4E309B928F1055A000C7753 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -235,6 +237,7 @@
 			children = (
 				F1DDB74D28EFB733003BB308 /* ViewDidLoadModifier.swift */,
 				F1DDB75728F0FD70003BB308 /* AirPlayView.swift */,
+				F1DDB75B28F24817003BB308 /* DarkLightMode.swift */,
 			);
 			path = Modifier;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				F132E86C28E341DB001E98D7 /* MainView.swift in Sources */,
 				F1DDB75828F0FD70003BB308 /* AirPlayView.swift in Sources */,
 				F1DDB74E28EFB733003BB308 /* ViewDidLoadModifier.swift in Sources */,
+				F1DDB75C28F24817003BB308 /* DarkLightMode.swift in Sources */,
 				F132E84228E34176001E98D7 /* dubstepfmApp.swift in Sources */,
 				F11D896828E72459004124D8 /* Podcast.swift in Sources */,
 			);
