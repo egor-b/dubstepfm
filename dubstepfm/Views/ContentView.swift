@@ -130,7 +130,7 @@ struct ContentView: View {
                 Spacer()
             }
         }.onViewDidLoad {
-            stream.playSound(sound: "https://archive.dubstep.fm/ARCHIVE_-_2019-03-09_-_JVIZ_Presents_Earthquake_Weather_In_Los_Angeles.mp3")
+            stream.playSound(sound: "http://stream.dubstep.fm/24aac")
         }
     }
 }

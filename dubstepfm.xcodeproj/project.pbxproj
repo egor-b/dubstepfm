@@ -27,6 +27,7 @@
 		F1DDB75428F0B94B003BB308 /* PodcatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DDB75328F0B94B003BB308 /* PodcatsCell.swift */; };
 		F1DDB75828F0FD70003BB308 /* AirPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DDB75728F0FD70003BB308 /* AirPlayView.swift */; };
 		F1DDB75C28F24817003BB308 /* DarkLightMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DDB75B28F24817003BB308 /* DarkLightMode.swift */; };
+		F1DDB75E28F261FE003BB308 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1DDB75D28F261FE003BB308 /* LaunchScreen.storyboard */; };
 		F4E309BA28F1055A000C7753 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4E309B928F1055A000C7753 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		F1DDB75328F0B94B003BB308 /* PodcatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcatsCell.swift; sourceTree = "<group>"; };
 		F1DDB75728F0FD70003BB308 /* AirPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPlayView.swift; sourceTree = "<group>"; };
 		F1DDB75B28F24817003BB308 /* DarkLightMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkLightMode.swift; sourceTree = "<group>"; };
+		F1DDB75D28F261FE003BB308 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4E309B928F1055A000C7753 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -183,6 +185,7 @@
 				F132E84528E34177001E98D7 /* Assets.xcassets */,
 				F4E309B928F1055A000C7753 /* GoogleService-Info.plist */,
 				F132E84728E34177001E98D7 /* Preview Content */,
+				F1DDB75D28F261FE003BB308 /* LaunchScreen.storyboard */,
 			);
 			path = dubstepfm;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 			files = (
 				F132E84928E34177001E98D7 /* Preview Assets.xcassets in Resources */,
 				F132E84628E34177001E98D7 /* Assets.xcassets in Resources */,
+				F1DDB75E28F261FE003BB308 /* LaunchScreen.storyboard in Resources */,
 				F4E309BA28F1055A000C7753 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -587,7 +591,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -641,7 +645,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -657,8 +661,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"dubstepfm/Preview Content\"";
 				DEVELOPMENT_TEAM = 4NW94WU93C;
 				ENABLE_PREVIEWS = YES;
@@ -669,6 +674,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -678,9 +684,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.crunchycorp.dubstepfm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -690,8 +699,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"dubstepfm/Preview Content\"";
 				DEVELOPMENT_TEAM = 4NW94WU93C;
 				ENABLE_PREVIEWS = YES;
@@ -702,6 +712,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -711,9 +722,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.crunchycorp.dubstepfm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
