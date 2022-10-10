@@ -13,6 +13,8 @@ struct ContentView: View {
     
     @Environment(\.colorScheme) var colorScheme: ColorScheme
 
+    let pub = NotificationCenter.default.publisher(for: NSNotification.Name("com.audio.play"))
+    
     var body: some View {
         ZStack {
             VStack(spacing: 5) {
@@ -53,6 +55,7 @@ struct ContentView: View {
                         stream.playerSeek(time: stream.currentTime)
                     }
                     .accentColor(.gray)
+                    .disabled(stream.isLive)
                     HStack {
                         Text(stream.time)
                             .font(.system(size: 10))
@@ -130,7 +133,14 @@ struct ContentView: View {
                 Spacer()
             }
         }.onViewDidLoad {
-            stream.playSound(sound: "http://stream.dubstep.fm/24aac")
+            stream.playSound(sound: "http://stream.dubstep.fm/256aac")
+        }.onReceive(pub) { output in
+            if let userInfo = output.userInfo {
+                if let link = userInfo["link"] as? String {
+                    stream.playSound(sound: link)
+                    stream.play()
+                }
+            }
         }
     }
 }

@@ -17,6 +17,9 @@ struct PodcastView: View {
             List {
                 ForEach(podcastDM.podcast, id: \.self) { podcast in
                     PodcatsCell(podcast: podcast)
+                        .onTapGesture {
+                            NotificationCenter.default.post(name: NSNotification.Name("com.audio.play"), object: nil, userInfo: ["link": podcast.link])
+                        }
                 }
             }.task {
                 await podcastDM.fetchPodcasts()
